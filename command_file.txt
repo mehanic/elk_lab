@@ -1,0 +1,54 @@
+2904  mkdir elasticstack
+ 2905  kubectl create ns elasticsearch
+ 2906  cd elasticstack/
+ 2907  kubectl apply -f elasticsearch.yml -ns elasticsearch
+ 2908  kubectl get statefulsets.apps -n elasticsearch
+ 2909  kubectl get pod -n elasticsearch
+ 2910  kubectl delete statefulsets.apps -n elasticsearch
+ 2911  kubectl delete statefulsets elasticsearch -n elasticsearch
+ 2912  kubectl delete statefulsets es-cluster-0 -n elasticsearch
+ 2913  kubectl delete statefulsets es-cluster -n elasticsearch
+ 2914  kubectl get statefulsets.apps -n elasticsearch 
+ 2915* kubectl svc statefulsets.app -n elasticsearch 
+ 2916  kubectl svc -n elasticsearch 
+ 2917  nvim kibana-ingress.yml
+ 2918  kubectl get ingress -n elasticsearch 
+ 2919  nvim kibana.yml
+ 2920  kubectl apply -f kibana-ingress.yml  -n elasticsearch
+ 2921  kubectl apply -f kibana.yml  -n elasticsearch
+ 2922  kubectl get svc -n elasticsearch 
+ 2923  kubectl get deployment -n elasticsearch 
+ 2924  kubectl port-forward kibana-84cf7f59c-87b98 5601:5601
+ 2925  kubectl port-forward kibana-84cf7f59c-87b98 5601:5601 -n elasticsearch
+ 2926  nvim fluent-bit.yml
+ 2927  mv fluent-bit.yml fluent-bit-role.yml 
+ 2928  nvim fluent-bit-config.yml
+ 2929  kubectl apply -f fluent-bit-role.yaml -n elasticsearch
+ 2930  kubectl apply -f fluent-bit-role.yml -n elasticsearch
+ 2931  kubectl apply -f fluent-bit-config.yml
+ 2932  nvim fluent-bit-pvc.yml
+ 2933  kubectl apply -f fluent-bit-pvc.yml -n elasticsearch 
+ 2934  nvim fluentbit-deployment.yml
+ 2935  kubectl get pods -n elasticsearch 
+ 2936  kubectl get deployments.apps -n elasticsearch 
+ 2937  nvim elasticsearch.yml 
+ 2938  kubectl apply -f fluentbit-deployment.yml -n elasticsearch 
+ 2939  kubectl get pvc -n elasticsearch 
+ 2940  kubectl get pv -n elasticsearch 
+ 2941  nvim fluent-bit-pvc.yml 
+ 2942  kubectl apply -f fluent-bit-pvc.yml -n elasticsearch
+ 2943  ls'=
+ls
+ 2944  kubectl delete deployments.apps fluent-bit -n elasticsearch 
+ 2945  nano fluent-bit-pvc.yml 
+ 2946  nvim fluent-bit-config.yml 
+ 2947  nvim fluentbit-deployment.yml 
+ 2948  kubectl apply -f fluent-bit-config.yml -n elasticsearch
+ 2949  kubectl apply -f fluentbit-deployment.yml -n elasticsearch
+ 2950  nvim deploy-application.yml
+ 2951  kubectl apply -f deploy-application.yml -n elasticsearch
+ 2952  kubectl get pods -n elasticsearch
+ 2953  nano kibana.yml 
+ 2954  nano elasticsearch.yml 
+ 2955  kubectl apply -f elasticsearch.yml  -n elasticsearch
+
