@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/tls-acme: "true"
+    ingress.kubernetes.io/force-ssl-redirect: "true"
+  name: kibana
+
+spec:
+  rules:
+  - host: kibana.computingforgeeks.com
+    http:
+      paths:
+      - backend:
+          serviceName: kibana
+          servicePort: 5601
+        path: /
+  tls:
+  - hosts:
+    - kibana.computingforgeeks.com
+    secretName: ingress-secret   // This can be created prior if using custom certs
